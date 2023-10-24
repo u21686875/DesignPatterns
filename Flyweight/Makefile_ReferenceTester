@@ -1,0 +1,14 @@
+CXX=g++
+CFLAGS=-I. -Wall
+TARGET=ReferenceTester
+OBJS= Style.o Reference.o ReferenceTester.o
+
+all: $(OBJS)
+	$(CXX) $(CFLAGS) $(OBJS) -o $(TARGET)
+    
+%.o: %.cpp
+	$(CXX) $(CFLAGS) -c $< -o $@
+    
+clean:
+	rm -f $(TARGET) $(OBJS)
+    

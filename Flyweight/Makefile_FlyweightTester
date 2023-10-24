@@ -1,0 +1,14 @@
+CXX=g++
+CFLAGS=-I. -Wall
+TARGET=FlyweightTester
+OBJS= Style.o Reference.o FlyweightFactory.o FlyweightTester.o
+
+all: $(OBJS)
+	$(CXX) $(CFLAGS) $(OBJS) -o $(TARGET)
+    
+%.o: %.cpp
+	$(CXX) $(CFLAGS) -c $< -o $@
+    
+clean:
+	rm -f $(TARGET) $(OBJS)
+    
